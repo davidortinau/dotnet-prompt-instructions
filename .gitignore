@@ -1,0 +1,51 @@
+# Ignore Sample folder
+Sample/
+
+# .NET build output directories
+bin/
+obj/
+
+# Visual Studio / VS Code files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# macOS specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Rider IDE files
+.idea/
+*.sln.iml
+
+# NuGet packages
+*.nupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio for Mac
+.vscode/
+.idea/
+.droidres/
+*.userprefs
