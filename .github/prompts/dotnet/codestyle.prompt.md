@@ -613,3 +613,51 @@ public async Task ShowAlertAsync(string message, CancellationToken token = defau
 		}
 	}
 	```
+
+### Methods Returning Task and ValueTask
+- **Good Practice**: Include a `CancellationToken` as a parameter for methods returning `Task` or `ValueTask`.
+- **Bad Practice**: Not including a `CancellationToken`.
+
+```csharp
+// Good Practice
+public async Task LoadDataAsync(CancellationToken token = default)
+{
+	token.ThrowIfCancellationRequested();
+	// Method implementation
+}
+
+// Bad Practice
+public async Task LoadDataAsync()
+{
+	// Method implementation
+}
+```
+
+### Pattern Matching
+- **Good Practice**: Use `is` for null checking and type checking.
+- **Bad Practice**: Using `==` for null checking or casting for type checking.
+
+```csharp
+// Good Practice
+if (something is null)
+{
+	// Handle null
+}
+
+if (something is Bucket bucket)
+{
+	bucket.Empty();
+}
+
+// Bad Practice
+if (something == null)
+{
+	// Handle null
+}
+
+var bucket = something as Bucket;
+if (bucket != null)
+{
+	bucket.Empty();
+}
+```
