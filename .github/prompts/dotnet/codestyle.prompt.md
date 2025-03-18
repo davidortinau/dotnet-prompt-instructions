@@ -4,6 +4,44 @@ This guide provides a set of best practices and coding standards for writing C# 
 ## XML document Comments:
 Add missing XML Doc Comments and mention the purpose, intent, and 'the why' of the code, so developers unfamiliar with the project can better understand it. If comments already exist, update them to meet the before mentioned criteria if needed. Use the full syntax of XML Doc Comments to make them as awesome as possible including references to types. Don't add any documentation that is obvious for even novice developers by reading the code.
 
+- **Good Practice**: Provide XML documentation for public members.
+- **Bad Practice**: Not providing documentation or leaving it empty.
+
+```csharp
+// Good Practice
+/// <summary>
+/// Displays an alert with the specified message.
+/// </summary>
+/// <param name="message">The message to display.</param>
+/// <param name="token">The cancellation token.</param>
+public async Task ShowAlertAsync(string message, CancellationToken token = default)
+{
+	try
+	{
+		token.ThrowIfCancellationRequested();
+		await _alertService.ShowAlertAsync(message, token);
+	}
+	catch (Exception ex)
+	{
+		Trace.WriteLine($"Error displaying alert: {ex.Message}");
+	}
+}
+
+// Bad Practice
+public async Task ShowAlertAsync(string message, CancellationToken token = default)
+{
+	try
+	{
+		token.ThrowIfCancellationRequested();
+		await _alertService.ShowAlertAsync(message, token);
+	}
+	catch (Exception ex)
+	{
+		Trace.WriteLine($"Error displaying alert: {ex.Message}");
+	}
+}
+```
+
 ## Type Definitions:
 - Prefer records for data types:
 	```csharp

@@ -50,6 +50,25 @@ builder.ConfigureMauiHandlers(handlers =>
 }
 ```
 
+## UI Components and Controls
+- **Good Practice**: Ensure that any UI components or controls are compatible with .NET MAUI.
+- **Bad Practice**: Using Xamarin.Forms-specific code unless there is a direct .NET MAUI equivalent.
+
+```csharp
+// Good Practice
+public class CustomButton : Button
+{
+    // .NET MAUI specific implementation
+}
+
+// Bad Practice
+public class CustomButton : Xamarin.Forms.Button
+{
+    // Xamarin.Forms specific implementation
+}
+```
+
+
 # Additional prompts
 
 Read these additional prompts when you doing work related to the link's name:
