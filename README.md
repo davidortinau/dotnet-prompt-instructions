@@ -6,6 +6,8 @@ This repository contains some instruction files to assist with building .NET app
 
 ## Current Instructions
 
-* [Async/Await](./github/prompts/async.prompt.md)
-* [.NET MAUI Controls](./github/prompts/maui-controls.prompt.md)
-* [.NET MAUI Memory Leaks](./github/prompts/maui-memory-leaks.prompt.md)
+* [Async/Await](/.github/prompts/dotnet/async.prompt.md)
+* [.NET MAUI Layouts](/.github/prompts/dotnet/maui/maui-layouts.prompt.md)
+* [.NET MAUI Memory Leaks](/.github/prompts/dotnet/maui/maui-memory-leaks.prompt.md)
+* [.NET MAUI Upgrade](/.github/prompts/dotnet/maui/maui-upgrade.prompt.md)
+* [.NET MAUI Prompts](/.github/prompts/dotnet/maui/maui.prompt.md)
